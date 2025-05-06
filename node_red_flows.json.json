@@ -1,0 +1,1081 @@
+[
+    {
+        "id": "482be255777ac141",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "mqtt_broker_config",
+        "type": "mqtt-broker",
+        "name": "Mosquitto",
+        "broker": "192.168.0.23",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ui_tab_briefkasten",
+        "type": "ui_tab",
+        "name": "Briefkasten",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "ui_group_sensorwerte",
+        "type": "ui_group",
+        "name": "Sensorwerte",
+        "tab": "ui_tab_briefkasten",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "7baa2a1e0eee1df3",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#10bff9",
+                "baseFont": "Arial Black,Arial Black,Gadget,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#306378",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#306378",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#306378",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#4690af",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#306378",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "060bb48bdc843752",
+        "type": "MySQLdatabase",
+        "name": "briefkasten_db",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "briefkasten_db",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "briefkasten_db_config",
+        "type": "MySQLdatabase",
+        "name": "briefkasten_db",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "briefkasten_db",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Überblick",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Briefkasten",
+        "tab": "ui_tab_briefkasten",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "979079f475d27af7",
+        "type": "ui_group",
+        "name": "Standard",
+        "tab": "ui_tab_briefkasten",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f3ad172a08103813",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.23",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a37bbc84d2fdd6d0",
+        "type": "ui_spacer",
+        "z": "482be255777ac141",
+        "name": "spacer",
+        "group": "979079f475d27af7",
+        "order": 2,
+        "width": "1",
+        "height": "1"
+    },
+    {
+        "id": "349c9d41e94b28bd",
+        "type": "ui_group",
+        "name": "Standard",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6b8429574cecaff3",
+        "type": "ui_group",
+        "name": "Letzter Alarm",
+        "tab": "dashboard_tab",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "782b3e955cc92fc2",
+        "type": "ui_tab",
+        "name": "Sensorwerte",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a1b8efacda065406",
+        "type": "ui_group",
+        "name": "Temperaturverlauf",
+        "tab": "782b3e955cc92fc2",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b86a771715917156",
+        "type": "ui_group",
+        "name": " Luftfeuchtigkeit",
+        "tab": "782b3e955cc92fc2",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a06d2030e21554ed",
+        "type": "ui_group",
+        "name": " Helligkeit",
+        "tab": "782b3e955cc92fc2",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d73c70c65014ab72",
+        "type": "ui_group",
+        "name": "Magnet",
+        "tab": "782b3e955cc92fc2",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e856a8e82b644e34",
+        "type": "ui_group",
+        "name": "Erschütterung",
+        "tab": "782b3e955cc92fc2",
+        "order": 5,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d8f25b03be3220a8",
+        "type": "telegram bot",
+        "botname": "BriefkastenBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "81d263bfebfc1487",
+        "type": "mqtt-broker",
+        "name": "Localhost",
+        "broker": "127.0.0.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0ebed4dbf6a3dabf",
+        "type": "mqtt-broker",
+        "name": "Localhost",
+        "broker": "127.0.0.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "mqtt_in_magnet",
+        "type": "mqtt in",
+        "z": "482be255777ac141",
+        "name": "briefkasten/status",
+        "topic": "briefkasten/status",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "81d263bfebfc1487",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "json_node"
+            ]
+        ]
+    },
+    {
+        "id": "json_node",
+        "type": "json",
+        "z": "482be255777ac141",
+        "name": "JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "magnet_text_node",
+                "565104c3ad7d91c4",
+                "2def6fb3801e7054",
+                "15d21b10628a4b12",
+                "8b08e2981b45d6c5",
+                "78e377273ba9f1e6",
+                "e59e98752c71c7f4",
+                "527caf8ef7e9e894",
+                "d9ea388305c1358e",
+                "785db91077147b4a",
+                "ae0d2a6ed9d973e4",
+                "688358fa6fbbba86"
+            ]
+        ]
+    },
+    {
+        "id": "magnet_text_node",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Magnet Text",
+        "func": "if (msg.payload.magnet === true) {\n    msg.payload = \"Geöffnet\";\n} else {\n    msg.payload = \"Geschlossen\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 160,
+        "wires": [
+            [
+                "magnet_ui_text"
+            ]
+        ]
+    },
+    {
+        "id": "magnet_ui_text",
+        "type": "ui_text",
+        "z": "482be255777ac141",
+        "group": "979079f475d27af7",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "Magnetkontakt",
+        "label": "Magnetkontakt",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 960,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "565104c3ad7d91c4",
+        "type": "debug",
+        "z": "482be255777ac141",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2def6fb3801e7054",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Temperatur",
+        "func": "msg.payload = msg.payload.temperatur;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 240,
+        "wires": [
+            [
+                "585267b358c1ecd0"
+            ]
+        ]
+    },
+    {
+        "id": "585267b358c1ecd0",
+        "type": "ui_gauge",
+        "z": "482be255777ac141",
+        "name": "",
+        "group": "ui_group_sensorwerte",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Temperatur",
+        "label": "°C",
+        "format": "{{msg.payload}}",
+        "min": "-10",
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 950,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "bcd5b2c9e161bafa",
+        "type": "ui_gauge",
+        "z": "482be255777ac141",
+        "name": "",
+        "group": "ui_group_sensorwerte",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Luftfeuchtigkeit",
+        "label": "units",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 960,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "15d21b10628a4b12",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Luftfeuchtigkeit",
+        "func": "msg.payload = msg.payload.feuchtigkeit;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 320,
+        "wires": [
+            [
+                "bcd5b2c9e161bafa"
+            ]
+        ]
+    },
+    {
+        "id": "8b08e2981b45d6c5",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Hellichkeitssensor",
+        "func": "msg.payload = msg.payload.helligkeit;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 400,
+        "wires": [
+            [
+                "45176432e5790e7f"
+            ]
+        ]
+    },
+    {
+        "id": "45176432e5790e7f",
+        "type": "ui_gauge",
+        "z": "482be255777ac141",
+        "name": "",
+        "group": "ui_group_sensorwerte",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Helligkeitssensor",
+        "label": "Lux",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "9000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 970,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "78e377273ba9f1e6",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": " Erschütterung anzeigen",
+        "func": "msg.payload = msg.payload.erschuetterung ? \"Bewegung erkannt\" : \"Keine Bewegung\";\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "86bdd2111e3f7ef2"
+            ]
+        ]
+    },
+    {
+        "id": "86bdd2111e3f7ef2",
+        "type": "ui_text",
+        "z": "482be255777ac141",
+        "group": "979079f475d27af7",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Erschütterung",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 960,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "a4132cd63aa60b49",
+        "type": "mysql",
+        "z": "482be255777ac141",
+        "mydb": "060bb48bdc843752",
+        "name": "briefkasten_db",
+        "x": 960,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e59e98752c71c7f4",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "MYSQL",
+        "func": "var temperatur = msg.payload.temperatur;\nvar feuchtigkeit = msg.payload.feuchtigkeit;\nvar licht = msg.payload.helligkeit;\nvar erschuetterung = msg.payload.erschuetterung ? 1 : 0;\nvar magnet = msg.payload.magnet ? 1 : 0;\nvar zeit = msg.payload.zeit;  // 🕒 Zeit vom ESP32 verwenden!\n\nmsg.topic = `INSERT INTO briefkasten (Zeit, Temperatur, Feuchtigkeit, Licht, Erschuetterung, Magnet)\nVALUES ('${zeit}', ${temperatur}, ${feuchtigkeit}, ${licht}, ${erschuetterung}, ${magnet})`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 540,
+        "wires": [
+            [
+                "a4132cd63aa60b49"
+            ]
+        ]
+    },
+    {
+        "id": "6c4f0b346b15819e",
+        "type": "ui_switch",
+        "z": "482be255777ac141",
+        "name": "",
+        "label": "Pieper",
+        "tooltip": "",
+        "group": "979079f475d27af7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 90,
+        "y": 760,
+        "wires": [
+            [
+                "ac23133862a201ed",
+                "9cf92e3f9f88a380"
+            ]
+        ]
+    },
+    {
+        "id": "ac23133862a201ed",
+        "type": "mqtt out",
+        "z": "482be255777ac141",
+        "name": "",
+        "topic": "briefkasten/pieper",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0ebed4dbf6a3dabf",
+        "x": 290,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "9cf92e3f9f88a380",
+        "type": "debug",
+        "z": "482be255777ac141",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "79075ec81aa8a606",
+        "type": "ui_chart",
+        "z": "482be255777ac141",
+        "name": "",
+        "group": "a1b8efacda065406",
+        "order": 0,
+        "width": "5",
+        "height": "4",
+        "label": "Temperatur",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "60",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#ff0000",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 910,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "527caf8ef7e9e894",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Temperatur",
+        "func": "msg.topic = \"Temperatur\";\nmsg.payload = msg.payload.temperatur;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 660,
+        "wires": [
+            [
+                "79075ec81aa8a606"
+            ]
+        ]
+    },
+    {
+        "id": "d9ea388305c1358e",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Luftfeuchtigkeit",
+        "func": "msg.topic = \"Luftfeuchtigkeit\";\nmsg.payload = msg.payload.feuchtigkeit;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 740,
+        "wires": [
+            [
+                "c46c47b7f0278e5d"
+            ]
+        ]
+    },
+    {
+        "id": "c46c47b7f0278e5d",
+        "type": "ui_chart",
+        "z": "482be255777ac141",
+        "name": "",
+        "group": "b86a771715917156",
+        "order": 0,
+        "width": "5",
+        "height": "4",
+        "label": "Luftfeuchtigkeit",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 920,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b36ea2e724f5a846",
+        "type": "ui_chart",
+        "z": "482be255777ac141",
+        "name": "",
+        "group": "a06d2030e21554ed",
+        "order": 0,
+        "width": "5",
+        "height": "4",
+        "label": " Helligkeit",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "8000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 900,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "785db91077147b4a",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": " Helligkeit",
+        "func": "msg.topic = \"Helligkeit\";\nmsg.payload = msg.payload.helligkeit;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 820,
+        "wires": [
+            [
+                "b36ea2e724f5a846"
+            ]
+        ]
+    },
+    {
+        "id": "32e7f7cdfa8bdc52",
+        "type": "ui_template",
+        "z": "482be255777ac141",
+        "group": "d73c70c65014ab72",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"'<div style=\\'text-align:center; font-size: 30px; color: ' + (msg.payload ? 'red' : 'lime') + ';\\'>' + \n    (msg.payload ? '📬 Post ist da!' : '📪 Briefkasten geschlossen') + '</div>'\">\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae0d2a6ed9d973e4",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Magnet-Symbol vorbereiten",
+        "func": "msg.payload = msg.payload.magnet;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 900,
+        "wires": [
+            [
+                "32e7f7cdfa8bdc52"
+            ]
+        ]
+    },
+    {
+        "id": "688358fa6fbbba86",
+        "type": "function",
+        "z": "482be255777ac141",
+        "name": "Erschütterung",
+        "func": "<div style=\"text-align:center; font-size: 30px; color: {{msg.payload ? 'red' : 'lime'}};\">\n  {{msg.payload ? \"💥 Erschütterung erkannt!\" : \"✅ Keine Bewegung\"}}\n</div>\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 2,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 980,
+        "wires": [
+            [
+                "44974c4525bcc7c2"
+            ]
+        ]
+    },
+    {
+        "id": "44974c4525bcc7c2",
+        "type": "ui_template",
+        "z": "482be255777ac141",
+        "group": "e856a8e82b644e34",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"font-size: 18px; display: flex; align-items: center; gap: 10px; color: {{msg.payload ? 'red' : 'lime'}};\">\n  <span>{{ msg.payload ? \"💥\" : \"✅\" }}</span>\n  <span>{{ msg.payload ? \"Erschütterung erkannt\" : \"Keine Bewegung\" }}</span>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    }
+]
